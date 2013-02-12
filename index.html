@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Javascriptový ořez obrázků (Javascript Image Cropper)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+	<link rel="StyleSheet" href="css/crop.css" media="all" type="text/css">
+	<script type="text/javascript" src="js/imageCropper.js?1.1.5"></script>
+</head>
+<body>
+
+<div id="stranka">
+
+	<h1>Ořez obrázku pomocí javascriptu a PHP</h1>
+	
+	<p>Zkuste si vybrat libovolnou oblast z obrázku a poté stiskněte tlačítko &quot;Oříznout&quot;. Pro více informací si <a href="http://www.chose.cz/weblog/index.php/orez-obrazku-pomoci-js-a-php/">přečtěte článek</a>.</p>
+
+	<div class="picture"><img id="obrazek" src="img/boxsters.jpg" width="800" height="600" alt="" /></div>
+	
+	<form name="cropForm" action="result.php" method="post">
+		<p><input type="submit" name="submit" value="Oříznout" /></p>
+	</form>
+	
+	<script type="text/javascript">
+		imageCropper.useForm('cropForm');
+		imageCropper.addCroper('obrazek','100','300',null,'0f0');
+		imageCropper.addCroper('obrazek','240','160','fixed');
+		// NOVE - nyni je moznost zadat minimalni rozmer, pod ktery obrazek nejde zmensit a max rozmer (ale pres tento rozmer jde obrazek zvetsit, zpracovani musi zaridit aplikace)
+		// imageCropper.addCroper('obrazek','100-200','200','fixed','0f0');
+	</script>
+	
+	<h2>Odkazy:</h2>
+	<ul>
+		<li><a href="imageCropper.zip">Stáhnout zdrojové soubory s příkladem (96 KB, ZIP)</a></li>
+		<li><a href="/weblog/index.php/orez-obrazku-pomoci-js-a-php/">Informace a popis skriptu</a></li>
+	</ul>
+		
+</div>
+
+<!-- statistika toplistu -->
+<a href="http://www.toplist.cz" target="_top"><script type="text/javascript">
+<!--
+document.write ('<img src="http://toplist.cz/dot.asp?id=78871&amp;http='+escape(document.referrer)+'&amp;wi='+escape(window.screen.width)+'&he='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;t='+escape(document.title)+'" width=1 height=1 border=0 alt="TOPlist"/>'); 
+//--></script><noscript><img SRC="http://toplist.cz/dot.asp?id=78871" border="0" alt="TOPlist" width="1" height="1" /></noscript></a>
+
+</body>
+</html>
